@@ -26,6 +26,7 @@ executable repl
       Pretty
       Overture
       Tests
+      Eval
   hs-source-dirs:
       src
   build-depends:

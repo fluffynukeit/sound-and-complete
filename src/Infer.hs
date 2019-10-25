@@ -12,6 +12,7 @@
 {-# LANGUAGE PatternGuards #-}
 {-# LANGUAGE NamedFieldPuns #-}
 {-# LANGUAGE FlexibleContexts #-}
+{-# LANGUAGE NoMonadFailDesugaring #-}
 
 module Infer where
 

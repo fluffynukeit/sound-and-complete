@@ -1,5 +1,5 @@
 let 
-  rien = import /home/frob/code/rien/rien.nix {
+  rien = import /home/danielaustin/Desktop/rien/rien.nix {
     packageName = "sound-and-complete";
     packagePath = ./.;
 
@@ -7,12 +7,11 @@ let
     # a particular `nixpkgs` commit.
     nixpkgsLock = ./nixpkgs.json;
 
-    ghcVersion = "ghc822";
+    ghcVersion = "ghc865";
 
     overrides = rec {
-      jailbreak = [ "cabal-helper" "ghc-mod" "liquidhaskell" ];
+      jailbreak = [ "cabal-helper" "liquidhaskell" ];
       skipHaddock = justStaticExecutables;
-      skipTests = [ "ghc-mod" ];
       justStaticExecutables = [ 
         "brittany" 
         "hpack"
@@ -29,7 +28,6 @@ in
     # Haskell dependencies
     deps = hsPkgs: with hsPkgs; [
       brittany
-      ghc-mod
       cabal-helper
 
       hpack
@@ -61,4 +59,4 @@ in
     nativeDeps = pkgs: with pkgs; [ 
       z3 # for liquidhaskell
     ];
-  }) // { shellHook = "source setup-ghcmod.sh"; } 
+  }) //{ shellHook = "source setup-ghcmod.sh";allowBroken = true; } 
