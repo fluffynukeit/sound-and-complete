@@ -1,5 +1,5 @@
 let 
-  rien = import /home/danielaustin/Desktop/rien/rien.nix {
+  rien = import .rien/rien.nix {
     packageName = "sound-and-complete";
     packagePath = ./.;
 

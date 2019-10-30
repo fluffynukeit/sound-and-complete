@@ -14,11 +14,9 @@ let
 
     development-servers = [
       ghcid
-      ghc-mod
     ];
 
     developmentFull = [
-      ghc-mod
       ghcid
       hlint
       brittany
